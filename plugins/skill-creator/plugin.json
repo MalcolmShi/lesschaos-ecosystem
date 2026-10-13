@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "skill-creator",
+  "version": "1.0.0",
+  "description": "创建与维护 LessChaos Skill：声明协议、编写规范与存放位置指引。",
+  "keywords": ["skills", "authoring"],
+  "extensions": {
+    "com.lesschaos": {
+      "interface": {
+        "displayName": "技能创作"
+      }
+    }
+  }
+}
