@@ -1,13 +1,15 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "plugin-creator",
-  "version": "1.0.0",
-  "description": "设计、打包与排查 LessChaos 插件与 Skill：包结构指引、声明校验要点与安装交接。",
+  "version": "1.1.0",
+  "description": "创建、客制化与排查插件和 Skill，支持本机安装、组织发布资格查询及企业共享。",
   "keywords": [
     "plugins",
     "skills",
     "authoring",
-    "diagnostics"
+    "diagnostics",
+    "organization",
+    "publishing"
   ],
   "extensions": {
     "com.lesschaos": {
