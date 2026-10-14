@@ -18,6 +18,11 @@ LessChaos 官方开源生态仓库，维护插件、Skill 与配套的标准 AI 
 - `release` 分支 — 发布产物：`plugins/catalog.json` 与按摘要寻址的 `plugins/packages/<archive_digest>.zip`，由 GitHub Pages 静态服务。
 - 客户端目录地址：`https://malcolmshi.github.io/lesschaos-ecosystem/plugins/catalog.json`。
 
+## 官方插件
+
+- `plugin-creator`（插件管理）：设计、创建和排查插件与 Skill。
+- `ai-app`（AI应用）：包含数据分析（`app-data-analysis`）、结构搭建（`app-schema-builder`）、记录修改（`app-record-editor`）和自由页面生成（`app-page-builder`）四个独立 Skill，共用可信原生 App Tools，支持当前 Organization 内获授权的跨 App 任务。执行实现由 LessChaos 宿主提供，包内不分发业务内核或页面运行器。
+
 ## 发布
 
 发布由维护者在 LessChaos 主工程内运行发布命令完成：先校验插件包，再按摘要写入只读包，最后原子替换目录。外部贡献不直接修改 `release` 分支。
