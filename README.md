@@ -23,7 +23,7 @@ LessChaos 官方开源生态仓库，维护插件、Skill 与配套的标准 AI 
 - `plugin-creator`（插件管理）：设计、创建和排查插件与 Skill。
 - `data-reviewer`（数据核验）：数据核验员工模板与 `data-review` Skill；核对周报 CSV、指标口径、重复及缺失，交付行级证据。
 - `report-writer`（报告整理）：报告整理员工模板与 `report-writing` Skill；从核验结果生成基础 Markdown 周报并保留待核对项。两项岗位插件均使用宿主既有文件与命令能力；可选辅助程序仅依赖本机 Python 3 标准库，不需要外部 MCP 或服务。
-- `ai-app`（AI应用）：包含数据分析（`app-data-analysis`）、结构搭建（`app-schema-builder`）、记录修改（`app-record-editor`）和自由页面生成（`app-page-builder`）四个独立 Skill，共用可信原生 App Tools，支持当前 Organization 内获授权的跨 App 任务。执行实现由 LessChaos 宿主提供，包内不分发业务内核或页面运行器。
+- `ai-app`（AI应用）：包含数据分析（`app-data-analysis`）、结构搭建（`app-schema-builder`）、记录修改（`app-record-editor`）和自由页面生成（`app-page-builder`）四个独立 Skill，共用服务端 MCP App Tools，支持本次 Run 的 Organization 内获授权的跨 App 任务。客户端将 `${LESSCHAOS_APP_MCP_URL}` 解析为产品服务端的组织 MCP 端点并逐请求提供设备 DPoP；工具实现随业务服务发布，包内不分发业务内核或页面运行器。
 
 ## 发布
 
