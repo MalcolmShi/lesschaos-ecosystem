@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "report-writer",
+  "version": "1.0.0",
+  "description": "将已核对材料整理为面向读者的部门周报，保留来源、风险与下一步。",
+  "keywords": ["ai-members", "weekly-report", "report-writing"],
+  "extensions": {
+    "com.lesschaos": {
+      "interface": {
+        "displayName": "报告整理"
+      },
+      "aiMembers": [
+        {
+          "id": "report-writer",
+          "definition": "./com.lesschaos/members/report-writer.json"
+        }
+      ]
+    }
+  }
+}
