@@ -17,12 +17,10 @@ def check(source):
         if len(reader.fieldnames) != len(set(reader.fieldnames)):
             raise ValueError("duplicate column names")
         rows, lines = [], []
-        previous = reader.line_num
         for row in reader:
             rows.append(row)
-            lines.append(previous + 1)
-            previous = reader.line_num
-    keys = [tuple((row.get(field) or "").strip() for field in ("department", "week", "metric", "unit")) for row in rows]
+            lines.append(reader.line_num)
+        keys = [tuple((row.get(field) or "").strip() for field in ("department", "week", "metric", "unit")) for row in rows]
     counts = Counter(keys)
     metrics, findings = [], []
     for row, key, line in zip(rows, keys, lines):

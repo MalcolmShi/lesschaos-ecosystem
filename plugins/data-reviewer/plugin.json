@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "data-reviewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "核验用户提供的部门周报数据、口径和证据，交付可复查的指标与缺口。",
   "keywords": ["ai-members", "weekly-report", "data-review"],
   "extensions": {
