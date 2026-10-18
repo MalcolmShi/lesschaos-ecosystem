@@ -1,6 +1,6 @@
 # LessChaos Ecosystem
 
-LessChaos 官方开源生态仓库，维护插件、Skill 与配套的标准 AI 成员模板，帮助组织建立 AI 团队。生态内容开源公开、不设套餐门槛；这些内容为配合 LessChaos Agent 工作而生，离开 LessChaos 客户端不构成独立产品。
+LessChaos 官方开源生态仓库，维护可选插件、Skill 与配套的标准 AI 成员模板，帮助组织建立 AI 团队。生态内容开源公开、不设套餐门槛；这些内容为配合 LessChaos Agent 工作而生，离开 LessChaos 客户端不构成独立产品。
 
 ## AI 成员与配套插件
 
@@ -14,16 +14,18 @@ LessChaos 官方开源生态仓库，维护插件、Skill 与配套的标准 AI 
 
 ## 结构
 
-- `plugins/` — 官方插件源码，一个插件一个目录，包含 `plugin.json`、Skill 与配套材料。
+- `plugins/` — 可选官方插件源码，一个插件一个目录，包含 `plugin.json`、Skill 与配套材料。
 - `release` 分支 — 发布产物：`plugins/catalog.json` 与按摘要寻址的 `plugins/packages/<archive_digest>.zip`，由 GitHub Pages 静态服务。
 - 客户端目录地址：`https://malcolmshi.github.io/lesschaos-ecosystem/plugins/catalog.json`。
 
-## 官方插件
+## 可选官方插件
 
-- `plugin-creator`（插件管理）：设计、创建和排查插件与 Skill。
 - `data-reviewer`（数据核验）：数据核验员工模板与 `data-review` Skill；核对周报 CSV、指标口径、重复及缺失，交付行级证据。
 - `report-writer`（报告整理）：报告整理员工模板与 `report-writing` Skill；从核验结果生成基础 Markdown 周报并保留待核对项。两项岗位插件均使用宿主既有文件与命令能力；可选辅助程序仅依赖本机 Python 3 标准库，不需要外部 MCP 或服务。
-- `ai-app`（AI应用）：包含数据分析（`app-data-analysis`）、结构搭建（`app-schema-builder`）、记录修改（`app-record-editor`）和自由页面生成（`app-page-builder`）四个独立 Skill，共用可信原生 App Tools，支持当前 Organization 内获授权的跨 App 任务。执行实现由 LessChaos 宿主提供，包内不分发业务内核或页面运行器。
+
+## 应用内置插件
+
+`plugin-creator`（插件管理）与 `ai-app`（AI 应用）在 LessChaos 主工程的 `apps/desktop/src-tauri/bundled-plugins/` 维护，随应用安装和更新，不从本仓库的目录取得或更新。已发布的历史目录和包保持不可变；可选插件继续独立发布。内置 App 工具仍由正式服务和 MCP 提供，包内只交付声明、Skill 与配套材料。
 
 ## 发布
 
@@ -36,8 +38,10 @@ LessChaos 官方开源生态仓库，维护插件、Skill 与配套的标准 AI 
 
 ## 客制化
 
-官方插件内容不可变：安装副本按摘要校验、随目录自动更新，改动会被判为损坏。客制化的正确路径是参照源码自建插件：
+可选官方插件内容不可变：安装副本按摘要校验、随目录自动更新，改动会被判为损坏。客制化的正确路径是参照源码自建插件：
 
 1. 复制 `plugins/<name>` 源码目录，修改 `plugin.json` 的 `name`——与已安装插件同名会被拒绝安装，技能同名会被先装载者遮蔽并记诊断。
 2. 在 LessChaos 中以本地目录或 ZIP 导入，或登记 Git 市场（登记时固定快照，更新靠重新登记）。
 3. 自建插件不进官方目录、不被自动更新；官方原件继续自动更新，两者互不影响。
+
+内置内容通过主工程维护并随应用发布；客制化从可取得的源码复制并改名，自建安装与应用原件分别保留。
